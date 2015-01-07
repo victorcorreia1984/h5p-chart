@@ -1,0 +1,56 @@
+[
+  {
+    "name": "graphMode",
+    "type": "select",
+    "label": "Type of graph",
+    "description": "Select which type of graph to use.",
+    "options": [
+      {
+        "value": "pieChart",
+        "label": "Pie Chart"
+      },
+      {
+        "value": "barChart",
+        "label": "Bar Chart"
+      }
+    ],
+    "default": "pieChart"
+  },
+  {
+    "name": "listOfTypes",
+    "type": "list",
+    "label": "Amount of types",
+    "entity": "option",
+    "min": 1,
+    "defaultNum": 2,
+    "field": {
+      "name": "type",
+      "type": "group",
+      "label": "Type",
+      "fields": [
+        {
+          "name": "text",
+          "type": "text",
+          "label": "Type"
+        },
+        {
+          "name": "value",
+          "type": "text",
+          "label": "Amount"
+        },
+        {
+          "name": "color",
+          "type": "text",
+          "label": "Color",
+          "optional": true
+        },
+        {
+          "name": "fontColor",
+          "type": "text",
+          "label": "Font Color",
+          "optional": true
+        }
+      ]
+    }
+  }
+]

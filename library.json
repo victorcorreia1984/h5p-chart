@@ -1,0 +1,24 @@
+{
+  "title": "Graph cake",
+  "description": "Graph cake.",
+  "majorVersion": 1,
+  "minorVersion": 1,
+  "patchVersion": 1,
+  "runnable": 1,
+  "author": "Joubel AS",
+  "license": "MIT",
+  "machineName": "H5P.GraphCake",
+  "preloadedCss": [
+    {
+      "path": "graph-cake.css"
+    }
+  ],
+  "preloadedJs": [
+    {
+      "path": "graph-cake.js"
+    },
+    {
+      "path": "d3.js"
+    }
+  ]
+}
