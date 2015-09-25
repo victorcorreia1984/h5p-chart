@@ -1,67 +1,91 @@
-var H5P = H5P || {};
+/*global H5P,d3*/
 
 /**
  * Graph Cake module
  * @external {jQuery} $ H5P.jQuery
  */
-H5P.GraphCake = (function ($) {
-  var pieChart = 'pieChart',
-    barChart = 'barChart';
+H5P.GraphCake = (function ($, EventDispatcher) {
 
   /**
    * Initialize module.
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
    *
-   * @returns {Object} C Graph Cake instance
+   * @returns {Object} GraphCake Graph Cake instance
    */
-  function C(params, id) {
+  function GraphCake(params, id) {
     this.$ = $(this);
     this.id = id;
 
+    // Inheritance
+    EventDispatcher.call(this);
+
     // Set default behavior.
-    this.params = $.extend({}, params);
+    this.params = $.extend({
+      listOfTypes: [
+        {
+          text: 'Cat',
+          value: '1',
+          color: 'black',
+          fontColor: 'white'
+        },
+        {
+          name: 'Dog',
+          value: '2',
+          color: 'green',
+          fontColor: 'white'
+        },
+        {
+          text: 'Mouse',
+          value: '3',
+          color: 'blue',
+          fontColor: 'white'
+        }
+      ]
+    }, params);
+
+    this.colors = d3.scale.ordinal()
+      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
   }
+
+  // Inheritance
+  GraphCake.prototype = Object.create(EventDispatcher.prototype);
+  GraphCake.prototype.constructor = GraphCake;
 
   /**
    * Append field to wrapper.
    * @param {jQuery} $container the jQuery object which this module will attach itself to.
    */
-  C.prototype.attach = function ($container) {
-    this.$inner = $container
-        .html('<div><div></div></div>')
-        .children();
+  GraphCake.prototype.attach = function ($container) {
+    this.$container = $container;
+    this.$inner = $container;
     this.addChart();
   };
 
-  C.prototype.addChart = function () {
-
+  GraphCake.prototype.addChart = function () {
     if (this.params.graphMode === 'pieChart'){
       this.createPie();
     }
     else {
       this.createBars();
     }
-
   };
 
-  C.prototype.createPie = function () {
+  GraphCake.prototype.createPie = function () {
     $('.chart').remove();
 
-    var $chart = $('<div/>', {'class': 'chart'})
+    $('<div/>', {'class': 'chart'})
       .appendTo(this.$inner);
 
+    var self = this;
     var dataset = this.params.listOfTypes;
 
-    var width = 400,
-      height = 400,
-      padding = {top: 20, bottom: 20, right: 20, left: 20},
-      w = width - padding.left,
-      h = height - padding.bottom,
-      radius = Math.min(w, h) / 2;
-
-    var color = d3.scale.ordinal()
-      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    var width = 400;
+    var height = 400;
+    var padding = {top: 20, bottom: 20, right: 20, left: 20};
+    var w = width - padding.left;
+    var h = height - padding.bottom;
+    var radius = Math.min(w, h) / 2;
 
     var arc = d3.svg.arc()
       .outerRadius(radius - 10)
@@ -73,6 +97,7 @@ H5P.GraphCake = (function ($) {
         return d.value; });
 
     var svg = d3.select(".chart").append("svg")
+      .attr('class', 'svg')
       .attr("width", width+'px')
       .attr("height", height+'px')
       .append("g")
@@ -84,62 +109,55 @@ H5P.GraphCake = (function ($) {
       .enter().append("g")
       .attr("class", "arc");
 
-    var path = g.append("path")
+    g.append("path")
       .attr("class", "path")
       .attr("d", arc)
       .style("fill", function(d) {
         if (d.data.color !== undefined) {
           return d.data.color;
         }
-        return color(dataset.indexOf(d.data) % 7);
+        return self.colors(dataset.indexOf(d.data) % 7);
       });
 
-    var pos = d3.svg.arc().innerRadius(0).outerRadius(radius/1.5);
-
-    var getAngle = function (d) {
-      return (180 / Math.PI * (d.startAngle + d.endAngle) / 2 - 90);
-    };
-
-    g.append("text")
+    g.append("svg:text")
       .attr("class", "typeText")
       .attr("transform", function(d) {
-        return "translate(" + pos.centroid(d) + ") " +
-          "rotate(" + getAngle(d) + ")"; })
-      .attr("dy", 5)
-      .style("text-anchor", "start")
-      .text(function(d) {
-        return d.value+': '+d.data.text;
+        d.innerRadius = 0;
+        d.outerRadius = radius;
+        return "translate(" + arc.centroid(d) + ")";
       })
+      .attr("text-anchor", "middle")
+      .text(function(d, i) { return dataset[i].value + ': ' + dataset[i].text; })
       .attr("fill", function (d) {
         if (d.data.fontColor !== undefined) {
           return d.data.fontColor;
         }
-        return '#000000';
       });
 
-    var aspect = height / width;
-
-    d3.select(window).on('resize', resize);
-
     function resize() {
-      //Only resize if smaller than initial size.
-      if (parseInt(d3.select('.chart').style('width'), 10)> 400) {
-        return false;
+      var scaleTo = self.$container.width();
+      var innerHeight = self.$container.height();
+      if (innerHeight < scaleTo) {
+        scaleTo = innerHeight;
       }
 
-      var width = parseInt(d3.select('.chart').style('width'), 10),
-        height = width*aspect,
-        padding = {top: 20, bottom: 20, right: 20, left: 20},
-        w = width - padding.left,
-        h = height - padding.bottom,
-        radius = Math.min(w, h) / 2;
+      width = scaleTo;
+      height = scaleTo;
+      padding = {top: 20, bottom: 20, right: 20, left: 20};
+      w = width - padding.left;
+      h = height - padding.bottom;
+      radius = Math.min(w, h) / 2;
 
       arc.outerRadius(radius - 10)
         .innerRadius(0);
 
       d3.select('.chart')
-        .attr("width", width)
-        .attr("height", height);
+        .attr("width", width + "px")
+        .attr("height", height + "px");
+
+      d3.select('.svg')
+        .attr('width', width + 'px')
+        .attr('height', height + 'px');
 
       d3.select('.translater')
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -147,26 +165,26 @@ H5P.GraphCake = (function ($) {
       d3.selectAll("path")
         .attr("d", arc);
 
-      var pos = d3.svg.arc().innerRadius(0).outerRadius(radius/1.5);
-
-      var getAngle = function (d) {
-        return (180 / Math.PI * (d.startAngle + d.endAngle) / 2 - 90);
-      };
-
-      d3.select('.typeText')
+      d3.select(".typeText")
         .attr("transform", function(d) {
-          return "translate(" + pos.centroid(d) + ") " +
-            "rotate(" + getAngle(d) + ")"; })
+          d.innerRadius = 0;
+          d.outerRadius = radius - 10;
+          return "translate(" + arc.centroid(d) + ")";
+        })
+        .text(function(d, i) { return dataset[i].value + ': ' + dataset[i].text; });
+    }
 
-    };
-
+    this.on('resize', function () {
+      resize();
+    });
     resize();
   };
 
-  C.prototype.createBars = function () {
+  GraphCake.prototype.createBars = function () {
+    var self = this;
     $('.chart').remove();
 
-    var $chart = $('<div/>', {'class': 'chart'})
+    $('<div/>', {'class': 'chart'})
       .appendTo(this.$inner);
 
     var w = 600;
@@ -182,11 +200,9 @@ H5P.GraphCake = (function ($) {
       return dataset[d % dataset.length].text;
     };
 
-    var margin = {top: 30, right: 20, bottom: 30, left: 20}
-      , width = 600 - margin.left - margin.right
-      , height = 250 - margin.bottom;
-
-    var barWidth = width / dataset.length;
+    var margin = {top: 30, right: 20, bottom: 30, left: 20};
+    var width = w - margin.left - margin.right;
+    var height = h - margin.bottom;
 
     var xScale = d3.scale.ordinal()
       .domain(d3.range(dataset.length))
@@ -234,7 +250,7 @@ H5P.GraphCake = (function ($) {
         if (d.color !== undefined) {
           return d.color;
         }
-        return '#000000';
+        return self.colors(dataset.indexOf(d) % 7);
       });
 
     //Create labels
@@ -264,17 +280,13 @@ H5P.GraphCake = (function ($) {
 
     var aspect = height / width;
 
-    d3.select(window).on('resize', resize);
-
     function resize() {
-      //Only resize if smaller than initial size.
-      if (parseInt(d3.select('.chart').style('width'), 10)> 600) {
-        return false;
-      }
-      var width = parseInt(d3.select('.chart').style('width'), 10) -margin.left - margin.right;
-      var w = parseInt(d3.select('.chart').style('width'), 10);
-      var height = (w * aspect) - margin.bottom;
-      var h = w * aspect
+      w = self.$inner.width();
+      width = w;
+      height = (w * aspect) - margin.bottom;
+      h = w * aspect;
+      h = self.$inner.height();
+      height = h - margin.bottom;
 
       xScale.rangeRoundBands([0, width], 0.05);
 
@@ -287,7 +299,7 @@ H5P.GraphCake = (function ($) {
         .attr("height", h);
 
       d3.select('.chart')
-        .attr("width", function (d) { return w; });
+        .attr("width", function () { return w; });
 
       d3.select('.x.axis')
         .attr("transform", "translate(0," + height + ")")
@@ -313,11 +325,13 @@ H5P.GraphCake = (function ($) {
         .attr("y", function(d) {
           return height - yScale(d.value) + 14;
         });
-
     }
 
+    this.on('resize', function () {
+      resize();
+    });
     resize();
   };
 
-    return C;
-})(H5P.jQuery);
+    return GraphCake;
+})(H5P.jQuery, H5P.EventDispatcher);
