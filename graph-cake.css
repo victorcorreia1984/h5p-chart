@@ -1,9 +1,20 @@
-/* Chart testing */
-
-.chart {
+.h5p-graphcake svg {
+  display: block;
+  margin: 0 auto;
+}
+.h5p-graphcake-chart {
   font-size: 0.75em;
 }
-
-.arc path {
+.h5p-graphcake-bar {
+  width: 100%;
+  height: 100%;
+}
+.h5p-graphcake-bar .domain {
+  fill: #fff;
   stroke: #fff;
+  stroke-width: 0.125em;
+}
+.h5p-graphcake-pie path {
+  stroke: #fff;
+  stroke-width: 0.125em;
 }

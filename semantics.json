@@ -41,12 +41,14 @@
         {
           "name": "color",
           "type": "text",
+          "widget": "colorSelector",
           "label": "Color",
           "optional": true
         },
         {
           "name": "fontColor",
           "type": "text",
+          "widget": "colorSelector",
           "label": "Font Color",
           "optional": true
         }

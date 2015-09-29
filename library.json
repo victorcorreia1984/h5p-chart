@@ -19,6 +19,12 @@
     },
     {
       "path": "d3.js"
+    },
+    {
+      "path": "pie-chart.js"
+    },
+    {
+      "path": "bar-chart.js"
     }
   ]
 }
