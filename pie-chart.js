@@ -52,29 +52,14 @@ H5P.GraphCake.PieChart = (function () {
      * Fit the current chart to the size of the wrapper.
      */
     self.resize = function () {
-      // Get current size of container
-      $wrapper.css('height', '100%');
+      // Always scale to width
       var style = window.getComputedStyle($wrapper[0]);
-
-      // Scale to width by default
       var scaleTo = parseFloat(style.width);
-
-      // Check if we should scale to height
-      var innerHeight = parseFloat(style.height);
-      $wrapper.css('height', '');
-      if (innerHeight < scaleTo) {
-        scaleTo = innerHeight;
-        $wrapper.css('marginTop', '');
-      }
-      else {
-        // Scaling to height, need to center vertically
-        $wrapper.css('marginTop', (innerHeight - scaleTo) / 2);
-      }
 
       // Do the math
       var width = scaleTo;
       var height = scaleTo;
-      var padding = 10;
+      var padding = 0;
       var radius = Math.min(width, height) / 2;
       var arc = d3.svg.arc()
         .outerRadius(radius - padding)
