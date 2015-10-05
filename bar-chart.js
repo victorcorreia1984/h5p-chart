@@ -72,14 +72,14 @@ H5P.GraphCake.BarChart = (function () {
         if (d.fontColor !== undefined) {
           return d.fontColor;
         }
-        return '#FFFFFF';
+        return '#000000';
       });
 
     /**
      * Fit the current bar chart to the size of the wrapper.
      */
     self.resize = function () {
-      // Determine width and height
+      // Always scale to available space
       var style = window.getComputedStyle($wrapper[0]);
       var width = parseFloat(style.width);
       var h = parseFloat(style.height);
