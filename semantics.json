@@ -43,6 +43,7 @@
           "type": "text",
           "widget": "colorSelector",
           "label": "Color",
+          "default": "000",
           "optional": true
         },
         {
@@ -50,6 +51,7 @@
           "type": "text",
           "widget": "colorSelector",
           "label": "Font Color",
+          "default": "fff",
           "optional": true
         }
       ]
