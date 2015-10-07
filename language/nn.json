@@ -1,0 +1,33 @@
+[
+  {
+    "label": "Diagramtype",
+    "options": [
+      {
+        "label": "Kakediagram"
+      },
+      {
+        "label": "Søylediagram"
+      }
+    ]
+  },
+  {
+    "label": "Verdiar",
+    "field": {
+      "label": "Verdi",
+      "fields": [
+        {
+          "label": "Namn"
+        },
+        {
+          "label": "Verdi"
+        },
+        {
+          "label": "Bakgrunnsfarge"
+        },
+        {
+          "label": "Tekstfarge"
+        }
+      ]
+    }
+  }
+]

@@ -3,7 +3,6 @@
     "name": "graphMode",
     "type": "select",
     "label": "Type of graph",
-    "description": "Select which type of graph to use.",
     "options": [
       {
         "value": "pieChart",
