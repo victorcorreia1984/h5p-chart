@@ -1,33 +1,35 @@
-[
-  {
-    "label": "Diagramtype",
-    "options": [
-      {
-        "label": "Kakediagram"
-      },
-      {
-        "label": "Søylediagram"
-      }
-    ]
-  },
-  {
-    "label": "Verdier",
-    "field": {
-      "label": "Verdi",
-      "fields": [
+{
+  "semantics": [
+    {
+      "label": "Diagramtype",
+      "options": [
         {
-          "label": "Navn"
+          "label": "Kakediagram"
         },
         {
-          "label": "Verdi"
-        },
-        {
-          "label": "Bakgrunnsfarge"
-        },
-        {
-          "label": "Tekstfarge"
+          "label": "Søylediagram"
         }
       ]
+    },
+    {
+      "label": "Verdier",
+      "field": {
+        "label": "Verdi",
+        "fields": [
+          {
+            "label": "Navn"
+          },
+          {
+            "label": "Verdi"
+          },
+          {
+            "label": "Bakgrunnsfarge"
+          },
+          {
+            "label": "Tekstfarge"
+          }
+        ]
+      }
     }
-  }
-]
+  ]
+}
