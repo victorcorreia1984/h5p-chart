@@ -1,30 +1,30 @@
 {
-  "title": "Graph cake",
-  "description": "Graph cake.",
+  "title": "Chart",
+  "description": "Create different charts",
   "majorVersion": 1,
-  "minorVersion": 1,
-  "patchVersion": 1,
+  "minorVersion": 0,
+  "patchVersion": 0,
   "runnable": 1,
   "author": "Joubel AS",
   "license": "MIT",
-  "machineName": "H5P.GraphCake",
+  "machineName": "H5P.Chart",
   "preloadedCss": [
     {
-      "path": "graph-cake.css"
+      "path": "chart.css"
     }
   ],
   "preloadedJs": [
     {
-      "path": "graph-cake.js"
+      "path": "chart.js"
     },
     {
       "path": "d3.js"
     },
     {
-      "path": "pie-chart.js"
+      "path": "pie.js"
     },
     {
-      "path": "bar-chart.js"
+      "path": "bar.js"
     }
   ],
   "editorDependencies": [

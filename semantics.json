@@ -2,7 +2,7 @@
   {
     "name": "graphMode",
     "type": "select",
-    "label": "Type of graph",
+    "label": "Type of chart",
     "options": [
       {
         "value": "pieChart",
@@ -18,24 +18,24 @@
   {
     "name": "listOfTypes",
     "type": "list",
-    "label": "Amount of types",
+    "label": "Data elements",
     "entity": "option",
     "min": 1,
     "defaultNum": 2,
     "field": {
       "name": "type",
       "type": "group",
-      "label": "Type",
+      "label": "Data element",
       "fields": [
         {
           "name": "text",
           "type": "text",
-          "label": "Type"
+          "label": "Name"
         },
         {
           "name": "value",
           "type": "number",
-          "label": "Amount"
+          "label": "Value"
         },
         {
           "name": "color",

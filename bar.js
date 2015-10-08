@@ -1,4 +1,4 @@
-H5P.GraphCake.BarChart = (function () {
+H5P.Chart.BarChart = (function () {
 
   /**
    * Creates a bar chart from the given data set.

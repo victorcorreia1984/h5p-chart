@@ -1,7 +1,7 @@
-H5P Graph Cake
+H5P Chart
 ==========
 
-Make a simple cake graph.
+Make simple charts.
 
 ## License
 

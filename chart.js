@@ -5,7 +5,7 @@
  * @external {jQuery} $ H5P.jQuery
  * @external {EventDispatcher} EventDispatcher H5P.EventDispatcher
  */
-H5P.GraphCake = (function ($, EventDispatcher) {
+H5P.Chart = (function ($, EventDispatcher) {
 
   /**
    * Initialize module.
@@ -14,7 +14,7 @@ H5P.GraphCake = (function ($, EventDispatcher) {
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
    */
-  function GraphCake(params, id) {
+  function Chart(params, id) {
     var self = this;
 
     // Inheritance
@@ -23,7 +23,7 @@ H5P.GraphCake = (function ($, EventDispatcher) {
     // Set params and filter data set to make sure it's valid
     self.params = params;
     if (self.params.listOfTypes) {
-      GraphCake.filterData(self.params.listOfTypes);
+      Chart.filterData(self.params.listOfTypes);
     }
     else {
       self.params.listOfTypes = [];
@@ -58,15 +58,15 @@ H5P.GraphCake = (function ($, EventDispatcher) {
   }
 
   // Inheritance
-  GraphCake.prototype = Object.create(EventDispatcher.prototype);
-  GraphCake.prototype.constructor = GraphCake;
+  Chart.prototype = Object.create(EventDispatcher.prototype);
+  Chart.prototype.constructor = Chart;
 
   /**
    * Make sure the data set has set the required text and value properties.
    *
    * @param {Array} dataSet
    */
-  GraphCake.filterData = function (dataSet) {
+  Chart.filterData = function (dataSet) {
     // Cycle through data set
     for (var i = 0; i < dataSet.length; i++) {
       var row = dataSet[i];
@@ -93,17 +93,17 @@ H5P.GraphCake = (function ($, EventDispatcher) {
    *
    * @param {H5P.jQuery} $container
    */
-  GraphCake.prototype.attach = function ($container) {
+  Chart.prototype.attach = function ($container) {
     var self = this;
 
     // Create chart on first attach
     if (self.$wrapper === undefined) {
-      self.$wrapper = $('<div/>', {'class': 'h5p-graphcake-chart h5p-graphcake-' + self.type.toLowerCase()});
-      self.chart = new H5P.GraphCake[self.type + 'Chart'](self.params.listOfTypes, self.$wrapper);
+      self.$wrapper = $('<div/>', {'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase()});
+      self.chart = new H5P.Chart[self.type + 'Chart'](self.params.listOfTypes, self.$wrapper);
     }
 
     // Prepare container
-    self.$container = $container.html('').addClass('h5p-graphcake').append(self.$wrapper);
+    self.$container = $container.html('').addClass('h5p-chart').append(self.$wrapper);
 
     // Handle resizing
     self.on('resize', function () {
@@ -115,5 +115,5 @@ H5P.GraphCake = (function ($, EventDispatcher) {
     });
   };
 
-  return GraphCake;
+  return Chart;
 })(H5P.jQuery, H5P.EventDispatcher);

@@ -1,4 +1,4 @@
-H5P.GraphCake.PieChart = (function () {
+H5P.Chart.PieChart = (function () {
 
   /**
    * Creates a pie chart from the given data set.
