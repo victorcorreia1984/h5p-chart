@@ -52,9 +52,9 @@ H5P.Chart.PieChart = (function () {
      * Fit the current chart to the size of the wrapper.
      */
     self.resize = function () {
-      // Always scale to width
+      // Scale to smallest value of height and width
       var style = window.getComputedStyle($wrapper[0]);
-      var scaleTo = parseFloat(style.width);
+      var scaleTo = Math.min(parseFloat(style.width), parseFloat(style.height));
 
       // Do the math
       var width = scaleTo;

@@ -35,7 +35,9 @@
         {
           "name": "value",
           "type": "number",
-          "label": "Value"
+          "label": "Value",
+          "default": 1,
+          "min": 1
         },
         {
           "name": "color",
