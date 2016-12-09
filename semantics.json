@@ -19,6 +19,7 @@
     "name": "listOfTypes",
     "type": "list",
     "label": "Data elements",
+    "importance": "high",
     "entity": "option",
     "min": 1,
     "defaultNum": 2,
