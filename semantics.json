@@ -28,19 +28,19 @@
       "name": "type",
       "type": "group",
       "label": "Data element",
-	  "importance": "high",
+      "importance": "high",
       "fields": [
         {
           "name": "text",
           "type": "text",
           "label": "Name",
-		   "importance": "medium"
+          "importance": "medium"
         },
         {
           "name": "value",
           "type": "number",
           "label": "Value",
-		  "importance": "low",
+	  "importance": "low",
           "default": 1,
           "min": 1
         },
@@ -49,7 +49,7 @@
           "type": "text",
           "widget": "colorSelector",
           "label": "Color",
-		  "importance": "low",
+	  "importance": "low",
           "default": "#000",
           "optional": true
         },
@@ -58,7 +58,7 @@
           "type": "text",
           "widget": "colorSelector",
           "label": "Font Color",
-		  "importance": "low",
+	  "importance": "low",
           "default": "#fff",
           "optional": true
         }
