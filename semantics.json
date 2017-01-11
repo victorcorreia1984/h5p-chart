@@ -3,6 +3,7 @@
     "name": "graphMode",
     "type": "select",
     "label": "Type of chart",
+    "importance": "high",
     "options": [
       {
         "value": "pieChart",
@@ -19,6 +20,7 @@
     "name": "listOfTypes",
     "type": "list",
     "label": "Data elements",
+    "importance": "high",
     "entity": "option",
     "min": 1,
     "defaultNum": 2,
@@ -26,16 +28,19 @@
       "name": "type",
       "type": "group",
       "label": "Data element",
+      "importance": "high",
       "fields": [
         {
           "name": "text",
           "type": "text",
-          "label": "Name"
+          "label": "Name",
+          "importance": "medium"
         },
         {
           "name": "value",
           "type": "number",
           "label": "Value",
+          "importance": "low",
           "default": 1,
           "min": 1
         },
@@ -44,6 +49,7 @@
           "type": "text",
           "widget": "colorSelector",
           "label": "Color",
+          "importance": "low",
           "default": "#000",
           "optional": true
         },
@@ -52,6 +58,7 @@
           "type": "text",
           "widget": "colorSelector",
           "label": "Font Color",
+          "importance": "low",
           "default": "#fff",
           "optional": true
         }
