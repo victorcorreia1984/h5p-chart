@@ -13,6 +13,7 @@
     },
     {
       "label": "Verdier",
+      "entity": "verdi",
       "field": {
         "label": "Verdi",
         "fields": [
