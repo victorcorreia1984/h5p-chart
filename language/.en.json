@@ -25,7 +25,6 @@
           },
           {
             "label": "Color",
-            "default": "#000"
           },
           {
             "label": "Font Color",
