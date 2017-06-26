@@ -9,7 +9,8 @@
         {
           "label": "Bar Chart"
         }
-      ]
+      ],
+      "default": "pieChart"
     },
     {
       "label": "Data elements",
@@ -24,10 +25,12 @@
             "label": "Value"
           },
           {
-            "label": "Color"
+            "label": "Color",
+            "default": "#000"
           },
           {
-            "label": "Font Color"
+            "label": "Font Color",
+            "default": "#fff"
           }
         ]
       }
