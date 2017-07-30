@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Type of chart",
+      "label":"グラフの種類",
       "options":[
         {
-          "label":"Pie Chart"
+          "label":"円グラフ"
         },
         {
-          "label":"Bar Chart"
+          "label":"棒グラフ"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Data elements",
+      "label":"データ要素",
       "entity":"option",
       "field":{
-        "label":"Data element",
+        "label":"データ要素",
         "fields":[
           {
-            "label":"Name"
+            "label":"名前"
           },
           {
-            "label":"Value"
+            "label":"値"
           },
           {
-            "label":"Color",
+            "label":"色",
             "default":"#000"
           },
           {
-            "label":"Font Color",
+            "label":"フォントの色",
             "default":"#fff"
           }
         ]
