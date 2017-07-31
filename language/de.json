@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Type of chart",
+      "label":"Diagrammtyp",
       "options":[
         {
-          "label":"Pie Chart"
+          "label":"Tortendiagramm"
         },
         {
-          "label":"Bar Chart"
+          "label":"Balkendiagramm"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Data elements",
+      "label":"Datenelemente",
       "entity":"option",
       "field":{
-        "label":"Data element",
+        "label":"Datenelement",
         "fields":[
           {
             "label":"Name"
           },
           {
-            "label":"Value"
+            "label":"Wert"
           },
           {
-            "label":"Color",
+            "label":"Farbe",
             "default":"#000"
           },
           {
-            "label":"Font Color",
+            "label":"Schriftfarbe",
             "default":"#fff"
           }
         ]
