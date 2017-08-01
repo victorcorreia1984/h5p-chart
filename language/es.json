@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Type of chart",
+      "label":"Tipo de gráfico",
       "options":[
         {
-          "label":"Pie Chart"
+          "label":"Gráfico circular"
         },
         {
-          "label":"Bar Chart"
+          "label":"Gráfico de barras"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Data elements",
+      "label":"Elementos de datos",
       "entity":"option",
       "field":{
-        "label":"Data element",
+        "label":"Elemento de datos",
         "fields":[
           {
-            "label":"Name"
+            "label":"Nombre"
           },
           {
-            "label":"Value"
+            "label":"Valor"
           },
           {
             "label":"Color",
             "default":"#000"
           },
           {
-            "label":"Font Color",
+            "label":"Color de letra",
             "default":"#fff"
           }
         ]
