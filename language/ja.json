@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Grafikon",
+      "label":"グラフの種類",
       "options":[
         {
-          "label":"Pita-grafikon"
+          "label":"円グラフ"
         },
         {
-          "label":"Stupčaski grafikon"
+          "label":"棒グラフ"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Vrijednosti",
-      "entity":"vrijednost",
+      "label":"データ要素",
+      "entity":"option",
       "field":{
-        "label":"Vrijednost",
+        "label":"データ要素",
         "fields":[
           {
-            "label":"Naziv"
+            "label":"名前"
           },
           {
-            "label":"Vrijednost"
+            "label":"値"
           },
           {
-            "label":"Boja pozadine",
+            "label":"色",
             "default":"#000"
           },
           {
-            "label":"Boja teksta",
+            "label":"フォントの色",
             "default":"#fff"
           }
         ]
