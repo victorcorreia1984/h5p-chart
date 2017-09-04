@@ -3,12 +3,14 @@
   "description": "Create different charts",
   "majorVersion": 1,
   "minorVersion": 2,
-  "patchVersion": 2,
+  "patchVersion": 3,
   "runnable": 1,
   "author": "Joubel",
   "license": "MIT",
   "machineName": "H5P.Chart",
-  "embedTypes": ["iframe"],
+  "embedTypes": [
+    "iframe"
+  ],
   "preloadedCss": [
     {
       "path": "chart.css"
