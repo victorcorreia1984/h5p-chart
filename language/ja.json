@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Diagramtype",
+      "label":"グラフの種類",
       "options":[
         {
-          "label":"Kakediagram"
+          "label":"円グラフ"
         },
         {
-          "label":"Søylediagram"
+          "label":"棒グラフ"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Verdiar",
-      "entity":"verdi",
+      "label":"データ要素",
+      "entity":"option",
       "field":{
-        "label":"Verdi",
+        "label":"データ要素",
         "fields":[
           {
-            "label":"Namn"
+            "label":"名前"
           },
           {
-            "label":"Verdi"
+            "label":"値"
           },
           {
-            "label":"Bakgrunnsfarge",
+            "label":"色",
             "default":"#000"
           },
           {
-            "label":"Tekstfarge",
+            "label":"フォントの色",
             "default":"#fff"
           }
         ]

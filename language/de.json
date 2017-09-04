@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Diagramtype",
+      "label":"Diagrammtyp",
       "options":[
         {
-          "label":"Kakediagram"
+          "label":"Tortendiagramm"
         },
         {
-          "label":"Søylediagram"
+          "label":"Balkendiagramm"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Verdiar",
-      "entity":"verdi",
+      "label":"Datenelemente",
+      "entity":"option",
       "field":{
-        "label":"Verdi",
+        "label":"Datenelement",
         "fields":[
           {
-            "label":"Namn"
+            "label":"Name"
           },
           {
-            "label":"Verdi"
+            "label":"Wert"
           },
           {
-            "label":"Bakgrunnsfarge",
+            "label":"Farbe",
             "default":"#000"
           },
           {
-            "label":"Tekstfarge",
+            "label":"Schriftfarbe",
             "default":"#fff"
           }
         ]

@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Diagramtype",
+      "label":"Grafikon",
       "options":[
         {
-          "label":"Kakediagram"
+          "label":"Pita-grafikon"
         },
         {
-          "label":"Søylediagram"
+          "label":"Stupčaski grafikon"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Verdiar",
-      "entity":"verdi",
+      "label":"Vrijednosti",
+      "entity":"vrijednost",
       "field":{
-        "label":"Verdi",
+        "label":"Vrijednost",
         "fields":[
           {
-            "label":"Namn"
+            "label":"Naziv"
           },
           {
-            "label":"Verdi"
+            "label":"Vrijednost"
           },
           {
-            "label":"Bakgrunnsfarge",
+            "label":"Boja pozadine",
             "default":"#000"
           },
           {
-            "label":"Tekstfarge",
+            "label":"Boja teksta",
             "default":"#fff"
           }
         ]

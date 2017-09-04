@@ -1,35 +1,35 @@
 {
   "semantics":[
     {
-      "label":"Diagramtype",
+      "label":"Tipo de gráfico",
       "options":[
         {
-          "label":"Kakediagram"
+          "label":"Gráfico circular"
         },
         {
-          "label":"Søylediagram"
+          "label":"Gráfico de barras"
         }
       ],
       "default":"pieChart"
     },
     {
-      "label":"Verdiar",
-      "entity":"verdi",
+      "label":"Elementos de datos",
+      "entity":"option",
       "field":{
-        "label":"Verdi",
+        "label":"Elemento de datos",
         "fields":[
           {
-            "label":"Namn"
+            "label":"Nombre"
           },
           {
-            "label":"Verdi"
+            "label":"Valor"
           },
           {
-            "label":"Bakgrunnsfarge",
+            "label":"Color",
             "default":"#000"
           },
           {
-            "label":"Tekstfarge",
+            "label":"Color de letra",
             "default":"#fff"
           }
         ]
