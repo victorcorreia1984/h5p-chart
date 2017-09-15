@@ -4,11 +4,12 @@ H5P.Chart.PieChart = (function () {
    * Creates a pie chart from the given data set.
    *
    * @class
-   * @param {array} dataSet
+   * @param {array} params from semantics, contains data set
    * @param {H5P.jQuery} $wrapper
    */
-  function PieChart(dataSet, $wrapper) {
+  function PieChart(params, $wrapper) {
     var self = this;
+    var dataSet = params.listOfTypes
 
     var defColors = d3.scale.ordinal()
       .range(["#90EE90", "#ADD8E6", "#FFB6C1", "#B0C4DE", "#D3D3D3", "#20B2AA", "#FAFAD2"]);
@@ -16,6 +17,8 @@ H5P.Chart.PieChart = (function () {
     // Create SVG
     var svg = d3.select($wrapper[0])
       .append("svg");
+
+    var description = svg.append("desc").html(params.figureDefinition);
 
     var translater = svg.append("g")
       .attr("class", "translater");
@@ -41,7 +44,7 @@ H5P.Chart.PieChart = (function () {
     var texts = arcs.append("svg:text")
       .attr("class", "text")
       .attr("text-anchor", "middle")
-      .text(function(d, i) { return dataSet[i].value + ': ' + dataSet[i].text; })
+      .text(function(d, i) { return dataSet[i].text + ': ' + dataSet[i].value; })
       .attr("fill", function (d) {
         if (d.data.fontColor !== undefined) {
           return d.data.fontColor;

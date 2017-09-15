@@ -53,6 +53,11 @@ H5P.Chart = (function ($, EventDispatcher) {
       ];
     }
 
+    // Set the figure definition for readspeakers if it doesn't exist
+    if (!self.params.chartDefinition) {
+      self.params.figureDefinition = "Chart";
+    }
+
     // Keep track of type.
     self.type = (self.params.graphMode === 'pieChart' ? 'Pie' : 'Bar');
   }
@@ -99,7 +104,7 @@ H5P.Chart = (function ($, EventDispatcher) {
     // Create chart on first attach
     if (self.$wrapper === undefined) {
       self.$wrapper = $('<div/>', {'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase()});
-      self.chart = new H5P.Chart[self.type + 'Chart'](self.params.listOfTypes, self.$wrapper);
+      self.chart = new H5P.Chart[self.type + 'Chart'](self.params, self.$wrapper);
     }
 
     // Prepare container

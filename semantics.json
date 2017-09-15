@@ -64,5 +64,13 @@
         }
       ]
     }
+  },
+  {
+    "name": "figureDefinition",
+    "type": "text",
+    "label": "Text read by readspeakers defining the figure as a chart.",
+    "importance": "low",
+    "default": "Chart",
+    "common": true
   }
 ]
