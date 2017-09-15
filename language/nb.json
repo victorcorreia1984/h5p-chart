@@ -1,33 +1,36 @@
 {
-  "semantics": [
+  "semantics":[
     {
-      "label": "Diagramtype",
-      "options": [
+      "label":"Diagramtype",
+      "options":[
         {
-          "label": "Kakediagram"
+          "label":"Kakediagram"
         },
         {
-          "label": "Søylediagram"
+          "label":"Søylediagram"
         }
-      ]
+      ],
+      "default":"pieChart"
     },
     {
-      "label": "Verdier",
-      "entity": "verdi",
-      "field": {
-        "label": "Verdi",
-        "fields": [
+      "label":"Verdier",
+      "entity":"verdi",
+      "field":{
+        "label":"Verdi",
+        "fields":[
           {
-            "label": "Navn"
+            "label":"Navn"
           },
           {
-            "label": "Verdi"
+            "label":"Verdi"
           },
           {
-            "label": "Bakgrunnsfarge"
+            "label":"Bakgrunnsfarge",
+            "default":"#000"
           },
           {
-            "label": "Tekstfarge"
+            "label":"Tekstfarge",
+            "default":"#fff"
           }
         ]
       }
