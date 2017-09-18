@@ -103,7 +103,10 @@ H5P.Chart = (function ($, EventDispatcher) {
 
     // Create chart on first attach
     if (self.$wrapper === undefined) {
-      self.$wrapper = $('<div/>', {'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase()});
+      self.$wrapper = $('<div/>', {
+        'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase(),
+        'role': 'application'
+      });
       self.chart = new H5P.Chart[self.type + 'Chart'](self.params, self.$wrapper);
     }
 
