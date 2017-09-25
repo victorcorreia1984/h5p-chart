@@ -54,7 +54,7 @@ H5P.Chart = (function ($, EventDispatcher) {
     }
 
     // Set the figure definition for readspeakers if it doesn't exist
-    if (!self.params.chartDefinition) {
+    if (!self.params.figureDefinition) {
       self.params.figureDefinition = "Chart";
     }
 
