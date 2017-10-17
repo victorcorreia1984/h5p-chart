@@ -105,13 +105,29 @@ H5P.Chart = (function ($, EventDispatcher) {
     if (self.$wrapper === undefined) {
       self.$wrapper = $('<div/>', {
         'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase(),
-        'role': 'application'
+        'role': 'document'
       });
       self.chart = new H5P.Chart[self.type + 'Chart'](self.params, self.$wrapper);
     }
 
     // Prepare container
     self.$container = $container.html('').addClass('h5p-chart').append(self.$wrapper);
+
+    // Add a title to give readspeakers context
+    var readSpeakerTitle = $('<p/>', {
+      'class': 'hidden-but-read',
+      'html': self.params.figureDefinition
+    });
+    self.$container.append(readSpeakerTitle);
+
+    // Add aria-labels for the data
+    self.params.listOfTypes.forEach(function(type) {
+      var ariaLabel = $('<p/>', {
+        'class': 'hidden-but-read',
+        'html': type.text + ' ' + type.value
+      });
+      self.$container.append(ariaLabel);
+    });
 
     // Handle resizing
     self.on('resize', function () {

@@ -44,6 +44,7 @@ H5P.Chart.PieChart = (function () {
 
     var texts = arcs.append("svg:text")
       .attr("class", "text")
+      .attr("aria-hidden", true)
       .attr("text-anchor", "middle")
       .text(function(d, i) { return dataSet[i].text + ': ' + dataSet[i].value; })
       .attr("fill", function (d) {

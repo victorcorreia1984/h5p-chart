@@ -62,9 +62,6 @@ H5P.Chart.BarChart = (function () {
         }
         return defColors(dataSet.indexOf(d) % 7);
       })
-      .attr("aria-label", function(d) {
-        return d.text + ': ' + d.value;
-      });
 
     // Create labels
     var texts = svg.selectAll("text")
