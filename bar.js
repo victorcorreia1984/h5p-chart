@@ -61,7 +61,7 @@ H5P.Chart.BarChart = (function () {
           return d.color;
         }
         return defColors(dataSet.indexOf(d) % 7);
-      })
+      });
 
     // Create labels
     var texts = svg.selectAll("text")
