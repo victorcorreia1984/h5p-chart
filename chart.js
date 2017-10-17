@@ -1,4 +1,4 @@
-/*global H5P,d3*/
+/*global H5P*/
 
 /**
  * Graph Cake module
@@ -14,7 +14,7 @@ H5P.Chart = (function ($, EventDispatcher) {
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
    */
-  function Chart(params, id) {
+  function Chart(params) {
     var self = this;
 
     // Inheritance

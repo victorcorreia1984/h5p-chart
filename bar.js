@@ -1,3 +1,4 @@
+/*global d3*/
 H5P.Chart.BarChart = (function () {
 
   /**
@@ -37,7 +38,7 @@ H5P.Chart.BarChart = (function () {
     var svg = d3.select($wrapper[0])
       .append("svg");
 
-    var description = svg.append("desc").html("chart");
+    svg.append("desc").html("chart");
 
     // Create x axis
     var xAxisG = svg.append("g")

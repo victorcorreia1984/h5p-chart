@@ -1,3 +1,4 @@
+/*global d3*/
 H5P.Chart.PieChart = (function () {
 
   /**
@@ -9,7 +10,7 @@ H5P.Chart.PieChart = (function () {
    */
   function PieChart(params, $wrapper) {
     var self = this;
-    var dataSet = params.listOfTypes
+    var dataSet = params.listOfTypes;
 
     var defColors = d3.scale.ordinal()
       .range(["#90EE90", "#ADD8E6", "#FFB6C1", "#B0C4DE", "#D3D3D3", "#20B2AA", "#FAFAD2"]);
@@ -18,7 +19,7 @@ H5P.Chart.PieChart = (function () {
     var svg = d3.select($wrapper[0])
       .append("svg");
 
-    var description = svg.append("desc").html(params.figureDefinition);
+    svg.append("desc").html(params.figureDefinition);
 
     var translater = svg.append("g")
       .attr("class", "translater");
