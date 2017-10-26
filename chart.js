@@ -1,4 +1,4 @@
-/*global H5P,d3*/
+/*global H5P*/
 
 /**
  * Graph Cake module
@@ -14,7 +14,7 @@ H5P.Chart = (function ($, EventDispatcher) {
    * @param {Object} params Behavior settings
    * @param {Number} id Content identification
    */
-  function Chart(params, id) {
+  function Chart(params) {
     var self = this;
 
     // Inheritance
@@ -51,6 +51,11 @@ H5P.Chart = (function ($, EventDispatcher) {
           fontColor: '#000'
         }
       ];
+    }
+
+    // Set the figure definition for readspeakers if it doesn't exist
+    if (!self.params.figureDefinition) {
+      self.params.figureDefinition = "Chart";
     }
 
     // Keep track of type.
@@ -98,12 +103,31 @@ H5P.Chart = (function ($, EventDispatcher) {
 
     // Create chart on first attach
     if (self.$wrapper === undefined) {
-      self.$wrapper = $('<div/>', {'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase()});
-      self.chart = new H5P.Chart[self.type + 'Chart'](self.params.listOfTypes, self.$wrapper);
+      self.$wrapper = $('<div/>', {
+        'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase(),
+        'role': 'document'
+      });
+      self.chart = new H5P.Chart[self.type + 'Chart'](self.params, self.$wrapper);
     }
 
     // Prepare container
     self.$container = $container.html('').addClass('h5p-chart').append(self.$wrapper);
+
+    // Add a title to give readspeakers context
+    var readSpeakerTitle = $('<p/>', {
+      'class': 'hidden-but-read',
+      'html': self.params.figureDefinition
+    });
+    self.$container.append(readSpeakerTitle);
+
+    // Add aria-labels for the data
+    self.params.listOfTypes.forEach(function(type) {
+      var ariaLabel = $('<p/>', {
+        'class': 'hidden-but-read',
+        'html': type.text + ' ' + type.value
+      });
+      self.$container.append(ariaLabel);
+    });
 
     // Handle resizing
     self.on('resize', function () {

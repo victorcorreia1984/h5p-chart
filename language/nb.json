@@ -34,6 +34,10 @@
           }
         ]
       }
+    },
+    {
+      "label": "Text read by readspeakers defining the figure as a chart.",
+      "default": "Chart"
     }
   ]
 }

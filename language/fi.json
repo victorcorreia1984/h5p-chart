@@ -1,39 +1,43 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Type of chart",
-      "options":[
+      "label": "Kaavion tyyppi",
+      "options": [
         {
-          "label":"Pie Chart"
+          "label": "Piirakka"
         },
         {
-          "label":"Bar Chart"
+          "label": "Pylväs"
         }
       ],
-      "default":"pieChart"
+      "default": "pieChart"
     },
     {
-      "label":"Data elements",
-      "entity":"option",
-      "field":{
-        "label":"Data element",
-        "fields":[
+      "label": "Aineisto",
+      "entity": "tieto",
+      "field": {
+        "label": "Tieto",
+        "fields": [
           {
-            "label":"Name"
+            "label": "Nimi"
           },
           {
-            "label":"Value"
+            "label": "Arvo"
           },
           {
-            "label":"Color",
-            "default":"#000"
+            "label": "Väri",
+            "default": "#000"
           },
           {
-            "label":"Font Color",
-            "default":"#fff"
+            "label": "Tekstiväri",
+            "default": "#fff"
           }
         ]
       }
+    },
+    {
+      "label": "Ruudunlukijan teksti kaaviolle.",
+      "default": "Kaavio"
     }
   ]
 }

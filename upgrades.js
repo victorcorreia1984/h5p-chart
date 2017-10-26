@@ -20,5 +20,5 @@ H5PUpgrades['H5P.Chart'] = (function () {
         finished(null, parameters);
       }
     }
-  }
+  };
 })();
