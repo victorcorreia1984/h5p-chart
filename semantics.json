@@ -51,7 +51,11 @@
           "label": "Color",
           "importance": "low",
           "default": "#000",
-          "optional": true
+          "optional": true,
+          "spectrum": {
+            "showInput": true,
+            "preferredFormat": "hex"
+          }
         },
         {
           "name": "fontColor",
@@ -60,7 +64,11 @@
           "label": "Font Color",
           "importance": "low",
           "default": "#fff",
-          "optional": true
+          "optional": true,
+          "spectrum": {
+            "showInput": true,
+            "preferredFormat": "hex"
+          }
         }
       ]
     }
