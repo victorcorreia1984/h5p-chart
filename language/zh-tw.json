@@ -4,13 +4,13 @@
       "label": "圖表類型",
       "options": [
         {
-          "label": "餅形圖"
+          "label": "圓餅圖"
         },
         {
-          "label": "條形圖"
+          "label": "長條圖"
         }
       ],
-      "default": "餅形圖"
+      "default": "圖餅圖"
     },
     {
       "label": "數據元素",
