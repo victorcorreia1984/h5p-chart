@@ -1,0 +1,43 @@
+{
+  "semantics": [
+    {
+      "label": "סוג גרף",
+      "options": [
+        {
+          "label": "גרף עוגה"
+        },
+        {
+          "label": "גרף עמודות"
+        }
+      ],
+      "default": "pieChart"
+    },
+    {
+      "label": "נתונים הגרף",
+      "entity": "option",
+      "field": {
+        "label": "Data element",
+        "fields": [
+          {
+            "label": "שם"
+          },
+          {
+            "label": "ערך"
+          },
+          {
+            "label": "בצע רקע",
+            "default": "#000"
+          },
+          {
+            "label": "צבע הגופן",
+            "default": "#fff"
+          }
+        ]
+      }
+    },
+    {
+      "label": "תאור המוקרא על ידי קורא־מסך יקריא את הרכיב כגרף.",
+      "default": "Chart"
+    }
+  ]
+}

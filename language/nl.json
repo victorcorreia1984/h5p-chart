@@ -1,0 +1,43 @@
+{
+  "semantics": [
+    {
+      "label": "Soort grafiek",
+      "options": [
+        {
+          "label": "Cirkeldiagram"
+        },
+        {
+          "label": "Staafdiagram"
+        }
+      ],
+      "default": "pieChart"
+    },
+    {
+      "label": "Gegevenselementen",
+      "entity": "optie",
+      "field": {
+        "label": "Gegevenselement",
+        "fields": [
+          {
+            "label": "Naam"
+          },
+          {
+            "label": "Waarde"
+          },
+          {
+            "label": "Kleur",
+            "default": "#000"
+          },
+          {
+            "label": "KLeur lettertype",
+            "default": "#fff"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Tekst gelezen door readsprekers die het figuur als een grafiek definiëren.",
+      "default": "Grafiek"
+    }
+  ]
+}
