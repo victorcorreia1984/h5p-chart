@@ -9,8 +9,7 @@
         {
           "label":"Balkendiagramm"
         }
-      ],
-      "default":"pieChart"
+      ]
     },
     {
       "label":"Datenelemente",
@@ -25,12 +24,10 @@
             "label":"Wert"
           },
           {
-            "label":"Farbe",
-            "default":"#000"
+            "label":"Farbe"
           },
           {
-            "label":"Schriftfarbe",
-            "default":"#fff"
+            "label":"Schriftfarbe"
           }
         ]
       }

@@ -9,8 +9,7 @@
         {
           "label": "Staafdiagram"
         }
-      ],
-      "default": "pieChart"
+      ]
     },
     {
       "label": "Gegevenselementen",
@@ -25,12 +24,10 @@
             "label": "Waarde"
           },
           {
-            "label": "Kleur",
-            "default": "#000"
+            "label": "Kleur"
           },
           {
-            "label": "KLeur lettertype",
-            "default": "#fff"
+            "label": "KLeur lettertype"
           }
         ]
       }
