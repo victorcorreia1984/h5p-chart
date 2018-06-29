@@ -9,8 +9,7 @@
         {
           "label": "Pylväs"
         }
-      ],
-      "default": "pieChart"
+      ]
     },
     {
       "label": "Aineisto",
@@ -25,12 +24,10 @@
             "label": "Arvo"
           },
           {
-            "label": "Väri",
-            "default": "#000"
+            "label": "Väri"
           },
           {
-            "label": "Tekstiväri",
-            "default": "#fff"
+            "label": "Tekstiväri"
           }
         ]
       }

@@ -9,8 +9,7 @@
         {
           "label":"Gráfico de barras"
         }
-      ],
-      "default":"pieChart"
+      ]
     },
     {
       "label":"Elementos de datos",
@@ -25,12 +24,10 @@
             "label":"Valor"
           },
           {
-            "label":"Color",
-            "default":"#000"
+            "label":"Color"
           },
           {
-            "label":"Color de letra",
-            "default":"#fff"
+            "label":"Color de letra"
           }
         ]
       }

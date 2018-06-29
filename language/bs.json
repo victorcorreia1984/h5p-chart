@@ -9,8 +9,7 @@
         {
           "label":"Stupčaski grafikon"
         }
-      ],
-      "default":"pieChart"
+      ]
     },
     {
       "label":"Vrijednosti",
@@ -25,12 +24,10 @@
             "label":"Vrijednost"
           },
           {
-            "label":"Boja pozadine",
-            "default":"#000"
+            "label":"Boja pozadine"
           },
           {
-            "label":"Boja teksta",
-            "default":"#fff"
+            "label":"Boja teksta"
           }
         ]
       }

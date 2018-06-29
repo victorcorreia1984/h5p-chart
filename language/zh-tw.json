@@ -9,8 +9,7 @@
         {
           "label": "長條圖"
         }
-      ],
-      "default": "圖餅圖"
+      ]
     },
     {
       "label": "數據元素",
@@ -25,12 +24,10 @@
             "label": "值"
           },
           {
-            "label": "顏色",
-            "default": "#000"
+            "label": "顏色"
           },
           {
-            "label": "字體顏色",
-            "default": "#fff"
+            "label": "字體顏色"
           }
         ]
       }

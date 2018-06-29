@@ -9,8 +9,7 @@
         {
           "label":"Søylediagram"
         }
-      ],
-      "default":"pieChart"
+      ]
     },
     {
       "label":"Verdiar",
@@ -25,12 +24,10 @@
             "label":"Verdi"
           },
           {
-            "label":"Bakgrunnsfarge",
-            "default":"#000"
+            "label":"Bakgrunnsfarge"
           },
           {
-            "label":"Tekstfarge",
-            "default":"#fff"
+            "label":"Tekstfarge"
           }
         ]
       }
