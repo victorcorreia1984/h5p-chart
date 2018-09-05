@@ -110,23 +110,20 @@ H5P.Chart.BarChart = (function () {
 
       // Move rectangles (bars)
       rects.attr("x", function(d, i) {
-          return xScale(i);
-        })
-        .attr("y", function(d) {
-          return height - yScale(d.value);
-        })
-        .attr("width", xScale.rangeBand())
+        return xScale(i);
+      }).attr("y", function(d) {
+        return height - yScale(d.value);
+      }).attr("width", xScale.rangeBand())
         .attr("height", function(d) {
           return yScale(d.value);
         });
 
       // Re-locate text value labels
       texts.attr("x", function(d, i) {
-          return xScale(i) + xScale.rangeBand() / 2;
-        })
-        .attr("y", function(d) {
-          return height - yScale(d.value) + lineHeight;
-        });
+        return xScale(i) + xScale.rangeBand() / 2;
+      }).attr("y", function(d) {
+        return height - yScale(d.value) + lineHeight;
+      });
 
       // Hide ticks from readspeakers, the entire rectangle is already labelled
       xAxisG.selectAll("text").attr("aria-hidden", true);
