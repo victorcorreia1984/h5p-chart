@@ -27,7 +27,8 @@ H5P.Chart.PieChart = (function () {
     var pie = d3.layout.pie()
       .sort(null)
       .value(function(d) {
-        return d.value; });
+        return d.value;
+      });
 
     var arcs = translater.selectAll(".arc")
       .data(pie(dataSet))
@@ -46,7 +47,9 @@ H5P.Chart.PieChart = (function () {
       .attr("class", "text")
       .attr("aria-hidden", true)
       .attr("text-anchor", "middle")
-      .text(function(d, i) { return dataSet[i].text + ': ' + dataSet[i].value; })
+      .text(function(d, i) {
+        return dataSet[i].text + ': ' + dataSet[i].value;
+      })
       .attr("fill", function (d) {
         if (d.data.fontColor !== undefined) {
           return d.data.fontColor;
@@ -76,10 +79,10 @@ H5P.Chart.PieChart = (function () {
       translater.attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")");
       paths.attr("d", arc);
       texts.attr("transform", function(d) {
-          d.innerRadius = 0;
-          d.outerRadius = radius - padding;
-          return "translate(" + arc.centroid(d) + ")";
-        });
+        d.innerRadius = 0;
+        d.outerRadius = radius - padding;
+        return "translate(" + arc.centroid(d) + ")";
+      });
     };
   }
 
