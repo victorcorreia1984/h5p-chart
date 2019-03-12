@@ -42,7 +42,8 @@
           "label": "Value",
           "importance": "low",
           "default": 1,
-          "min": 1
+          "min": 0.0001,
+          "decimals": 4
         },
         {
           "name": "color",
