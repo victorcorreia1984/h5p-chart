@@ -1,40 +1,40 @@
 {
-  "semantics":[
+  "semantics": [
     {
-      "label":"Diagrammtyp",
-      "options":[
+      "label": "Diagrammtyp",
+      "options": [
         {
-          "label":"Tortendiagramm"
+          "label": "Tortendiagramm"
         },
         {
-          "label":"Balkendiagramm"
+          "label": "Balkendiagramm"
         }
       ]
     },
     {
-      "label":"Datenelemente",
-      "entity":"option",
-      "field":{
-        "label":"Datenelement",
-        "fields":[
+      "label": "Datenelemente",
+      "entity": "option",
+      "field": {
+        "label": "Datenelement",
+        "fields": [
           {
-            "label":"Name"
+            "label": "Name"
           },
           {
-            "label":"Wert"
+            "label": "Wert"
           },
           {
-            "label":"Farbe"
+            "label": "Farbe"
           },
           {
-            "label":"Schriftfarbe"
+            "label": "Schriftfarbe"
           }
         ]
       }
     },
     {
-      "label": "Text read by readspeakers defining the figure as a chart.",
-      "default": "Chart"
+      "label": "Text, den ein Vorlesewerkzeug vorliest, um die Abbildung als Diagramm auszuweisen (Barrierefreiheit)",
+      "default": "Diagramm"
     }
   ]
 }
