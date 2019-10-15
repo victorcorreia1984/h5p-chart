@@ -104,8 +104,7 @@ H5P.Chart = (function ($, EventDispatcher) {
     // Create chart on first attach
     if (self.$wrapper === undefined) {
       self.$wrapper = $('<div/>', {
-        'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase(),
-        'role': 'document'
+        'class': 'h5p-chart-chart h5p-chart-' + self.type.toLowerCase()
       });
       self.chart = new H5P.Chart[self.type + 'Chart'](self.params, self.$wrapper);
     }
@@ -113,21 +112,22 @@ H5P.Chart = (function ($, EventDispatcher) {
     // Prepare container
     self.$container = $container.html('').addClass('h5p-chart').append(self.$wrapper);
 
-    // Add a title to give readspeakers context
-    var readSpeakerTitle = $('<p/>', {
+    const $defgroup = $('<div/>', {
       'class': 'hidden-but-read',
-      'html': self.params.figureDefinition
+      'aria-label': self.params.figureDefinition,
+      'role': 'img' // Using img here since support for figure is non-existent (Will they know the difference?)
     });
-    self.$container.append(readSpeakerTitle);
 
     // Add aria-labels for the data
     self.params.listOfTypes.forEach(function(type) {
-      var ariaLabel = $('<p/>', {
+      var ariaLabel = $('<div/>', {
         'class': 'hidden-but-read',
-        'html': type.text + ' ' + type.value
+        'html': type.text + ': ' + type.value + ''
       });
-      self.$container.append(ariaLabel);
+      $defgroup.append(ariaLabel);
     });
+
+    self.$container.append($defgroup);
 
     // Handle resizing
     self.on('resize', function () {
