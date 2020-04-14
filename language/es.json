@@ -2,7 +2,7 @@
   "semantics":[
     {
       "label":"Tipo de gráfico",
-      "opciones":[
+      "options":[
         {
           "label":"Gráfico circular"
         },
