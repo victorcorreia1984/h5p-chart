@@ -33,8 +33,8 @@
       }
     },
     {
-      "label": "Text read by readspeakers defining the figure as a chart.",
-      "default": "Chart"
+      "label": "Tekst lest av readspeakers (som definerer figuren som et diagram).",
+      "default": "Diagram"
     }
   ]
 }
