@@ -13,7 +13,7 @@
     },
     {
       "label":"Elementos de datos",
-      "entity":"option",
+      "entity":"opción",
       "field":{
         "label":"Elemento de datos",
         "fields":[
