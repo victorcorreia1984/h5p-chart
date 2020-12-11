@@ -1,0 +1,40 @@
+{
+  "semantics": [
+    {
+      "label": "Soort grafiek",
+      "options": [
+        {
+          "label": "Sirkeldiagram"
+        },
+        {
+          "label": "Staafdiagram"
+        }
+      ]
+    },
+    {
+      "label": "Gegewe elemente",
+      "entity": "opsie",
+      "field": {
+        "label": "Gegewe elemente",
+        "fields": [
+          {
+            "label": "Naam"
+          },
+          {
+            "label": "Waarde"
+          },
+          {
+            "label": "Kleur"
+          },
+          {
+            "label": "Kleur lettertipe"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Teks gelees deur skermlesers het die teks as 'n grafiek identifiseer.",
+      "default": "Grafiek"
+    }
+  ]
+}
